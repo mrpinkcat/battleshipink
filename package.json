@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "A battleship test write in javascript.",
   "main": "server.js",
-  "repository": "",
+  "repository": "https://github.com/mrpinkcat/battleshipink/",
   "author": "Anizan Gatien",
+  "license": "CC-BY-NC-4.0",
   "dependencies": {
     "express": "^4.15.2",
     "http": "0.0.0",
