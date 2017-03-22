@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Voltaire', sans-serif;
+}
+
+#login-bc {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+#login-bc div {
+    font-size: 300%;
+    white-space: nowrap;
+}
+
+#username-input {
+    transition: color 200ms;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding-bottom: 15px;
+    border-bottom: 2px solid white;
+    width: 600px;
+    outline: none; /*permet de ne pas voir le carré bleu de selection*/
+}
+
+#username-rules {
+    font-size: 40%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.white-text {
+    color: white;
+}
+
+.vcenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursive {
+    font-family: 'Special Elite', cursive;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "BattleShipInk",
+  "version": "0.0.1",
+  "description": "A battleship test write in javascript.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Anizan Gatien",
+  "dependencies": {
+    "express": "^4.15.2",
+    "http": "0.0.0",
+    "mattboldt.typed.js": "^1.1.4",
+    "moment": "^2.18.1",
+    "socket.io": "^1.7.3"
+  }
+}
