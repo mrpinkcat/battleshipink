@@ -1,3 +1,3 @@
-## BattbleShipInk
+## BattleShipInk
 
-(BattbleShip + (Inc + Pink)) = BattbleShipInk
+(BattleShip + (Inc + Pink)) = BattleShipInk
