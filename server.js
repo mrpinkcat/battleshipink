@@ -16,6 +16,7 @@ server.listen(_PORT, function() {
 
 app.use('/css', express.static(__dirname + '/web/css/'));
 app.use('/js', express.static(__dirname + '/web/js/'));
+app.use('/img', express.static(__dirname + '/web/img/'));
 
 app.get('/', (req, res) => {
     res.sendFile('web/index.html', {

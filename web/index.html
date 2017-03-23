@@ -22,6 +22,9 @@
             <p id="username-rules">Votre nom doit faire plus de 2 caractères sans espaces.</p>
         </div>
     </div>
+    
+    <div id="game"></div>
+    
     <div id="menu" class="invisible container">
         <h1 id="main-title"></h1>
         <div id="cols" class="row" style="display: none;">
@@ -30,8 +33,9 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Je suis un joueur voulant créer une partie</h3>
                     </div>
-                    <div class="panel-body">
-                        Panel content
+                    <div class="panel-body no-top-padding">
+                        <img src="img/new-user.png"><br>
+                        <div class="btn btn-primary">Créer une partie</div>
                     </div>
                 </div>
             </div>
@@ -40,14 +44,43 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Je suis un joueur possedant une invitation un par GID</h3>
                     </div>
+                    <div class="panel-body no-top-padding">
+                        <img src="img/connection.png"><br>
+                        <textarea class="form-control" id="message-gid" rows="1" placeholder="Message pour le créateur de la partie"></textarea><br>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="GID" id="input-gid">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" id="btn-gid">Rejoindre la partie</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">Chat</h3>
+                    </div>
+                    
                     <div class="panel-body">
-                        Panel content
+                        
+                        <div id="content-chat">
+                            
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Message" id="input-chat">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" id="btn-chat">Envoyer</button>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="game"></div>
     </div>
+    
+    <script type="text/javascript" src="js/aesthetic.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/typed.js"></script>
     <script type="text/javascript" src="js/blyat.js"></script>
