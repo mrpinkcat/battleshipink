@@ -31,5 +31,5 @@ socket.on('chat-global-print', function(formatHtml) {
 });
 
 socket.on('chat-global-error-string-0', function() {
-    console.log('erreur tu ne tapes rien'); // todo .effect(blind)
+    // todo .effect(blind)
 });
