@@ -58,6 +58,9 @@ body {
 #btn-chat {
     border-radius: 0px 0px 2px 0px;
     border: 1px solid #cccccc;
+    background-color: #337ab7;
+    color: white;
+    outline: none;
 }
 
 #input-chat {

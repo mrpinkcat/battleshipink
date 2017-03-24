@@ -48,15 +48,15 @@ io.on('connection', function(socket) {
             return socket.emit('username-step-2-return', 'ok');
     });
 
-    socket.on('user-connected-to-chat-global', function(userName) {
-        io.emit('chat-global-print', helper.chatConectHtml(userName));
+    socket.on('user-connected-to-chat-global', function(userName, userId) {
+        io.emit('chat-global-print', helper.chatConectHtml(userName, userId));
     });
 
-    socket.on('user-message-to-chat-global', function(userName, message) {
+    socket.on('user-message-to-chat-global', function(userName, userId, message) {
         if (message.length == 0) {
             return socket.emit('chat-global-error-string-0');
         }
         helper.log(userName + ' send to global chat : ' + message);
-        io.emit('chat-global-print', helper.chatMessageHtml(userName, message));
+        io.emit('chat-global-print', helper.chatMessageHtml(userName, userId, message));
     });
 });
