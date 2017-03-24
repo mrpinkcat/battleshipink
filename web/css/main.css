@@ -65,11 +65,22 @@ body {
 }
 
 #content-chat {
+    height: 400px;
     padding: 10px;
     margin-right: 1px;
     border: 1px solid #cccccc;
     border-bottom: none;
     border-radius: 2px 2px 0px 0px;
+    
+    overflow-y: auto;
+}
+
+#connected-chat {
+    color: #8794a3;
+}
+
+#message-chat-user-name {
+    color: #337ab7;
 }
 
 .no-top-padding {

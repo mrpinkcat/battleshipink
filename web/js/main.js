@@ -1,3 +1,5 @@
+/*global logToChat*/
+
 var socket = io();
 
 var userName,
@@ -19,17 +21,31 @@ function logOk() {
         callback: function() {
             $('#cols').fadeIn(500);
             onFadeIn();
+            logToChat('global');
         }
     });
 }
 
 socket.on('username-ok', function(newUserId) {
     userName = $('#username-input').val();
-    userId = newUserId;
-    $('#username-input').val('');
-    $('#login-bc').fadeOut(500, function() {
-        logOk();
+    socket.emit('username-step-2', userName);
+    socket.on('username-step-2-return', function(res, formatResHtml) {
+        if (res == 'username-step-2-error-length-0') { // si il y a un bug et que le userName se retrouve vide
+            console.log(userName);
+            $('#login-bc').css('background-color', 'red');
+            $('#username-text').remove();
+            $('#username-input').remove();
+            $('#username-rules').remove();
+            return $('#username-conainer').append(formatResHtml);
+        }
+        if (res == 'ok') {
+            $('#username-input').val('');
+            $('#login-bc').fadeOut(500, function() {
+                logOk();
+            });
+        }
     });
+    userId = newUserId;
 });
 
 socket.on('username-error', function() {
@@ -37,4 +53,4 @@ socket.on('username-error', function() {
     $('#username-rules').css('color', 'red');
     $('#username-input').css('color', 'red');
     $('#username-input').css('border-bottom', '2px solid red');
-});
+})

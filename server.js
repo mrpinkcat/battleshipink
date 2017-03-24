@@ -39,4 +39,24 @@ io.on('connection', function(socket) {
             return;
         }
     });
+    
+    socket.on('username-step-2', function(userName) {
+        if (userName.length == 0) {
+            return socket.emit('username-step-2-return', 'username-step-2-error-length-0', '<h1>! ERREUR !</h1><p>username-step-2-error-length-0</p><h3>Rechargez la page svp<h3>');
+        }
+        else
+            return socket.emit('username-step-2-return', 'ok');
+    });
+
+    socket.on('user-connected-to-chat-global', function(userName) {
+        io.emit('chat-global-print', helper.chatConectHtml(userName));
+    });
+
+    socket.on('user-message-to-chat-global', function(userName, message) {
+        if (message.length == 0) {
+            return socket.emit('chat-global-error-string-0');
+        }
+        helper.log(userName + ' send to global chat : ' + message);
+        io.emit('chat-global-print', helper.chatMessageHtml(userName, message));
+    });
 });
