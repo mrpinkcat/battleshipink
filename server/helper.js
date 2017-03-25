@@ -10,6 +10,10 @@ exports.chatConectHtml = function(userName, userId) {
     return '<span id="connected-chat"><center>' + userName + ' #' + userId + ' vient de se connecter</center></span>';
 };
 
+exports.chatDisconectHtml = function(userName, userId) {
+    return '<span id="connected-chat"><center>' + userName + ' #' + userId + ' vient de se déconnecter</center></span>';
+};
+
 exports.chatMessageHtml = function(userName, userId, message) {
     return '<span id="last-message" style="display: none;"><span id="message-chat-user-name">' + userName  + ' #' + userId + ' :</span> ' + message + '</span><br>';
 };

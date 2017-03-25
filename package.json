@@ -11,6 +11,7 @@
     "http": "0.0.0",
     "mattboldt.typed.js": "^1.1.4",
     "moment": "^2.18.1",
+    "node-json-db": "^0.7.3",
     "socket.io": "^1.7.3"
   }
 }

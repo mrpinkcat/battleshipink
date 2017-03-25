@@ -2,7 +2,7 @@
 
 function logToChat(globalOrGID) {
     if (globalOrGID == 'global') {
-        socket.emit('user-connected-to-chat-global', userName, userId);
+        socket.emit('user-connected-to-chat-global');
     }
 
     if (typeof globalOrGID == 'number') {
@@ -12,13 +12,13 @@ function logToChat(globalOrGID) {
 
 $('#input-chat').keypress(function(e) { // quand on appuie sur enter sur le chat global
     if (e.which == 13) {
-        socket.emit('user-message-to-chat-global', userName, userId, $('#input-chat').val());
+        socket.emit('user-message-to-chat-global', $('#input-chat').val());
         $('#input-chat').val('');
     }
 });
 
 $('#btn-chat').click(function() { // quand on clique sur le boutton envoyé sur le chat global
-    socket.emit('user-message-to-chat-global', userName, userId, $('#input-chat').val());
+    socket.emit('user-message-to-chat-global', $('#input-chat').val());
     $('#input-chat').val('');
 });
 

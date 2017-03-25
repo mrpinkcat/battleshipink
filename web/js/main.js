@@ -54,3 +54,12 @@ socket.on('username-error', function() {
     $('#username-input').css('color', 'red');
     $('#username-input').css('border-bottom', '2px solid red');
 })
+
+// error screen
+
+socket.on('disconnect', function() {
+    $('#login-bc').remove();
+    $('#game').remove();
+    $('#menu').remove();
+    $('#lost-co-screen').fadeIn(250);
+});
