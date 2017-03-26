@@ -97,7 +97,6 @@ body {
 #water {
     height: 32px;
     width: 32px;
-    background-image: url(img/battleship/water.png);
 }
 
 .no-top-padding {
