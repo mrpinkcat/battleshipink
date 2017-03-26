@@ -6,6 +6,10 @@ body {
     color: white;
 }
 
+textarea {
+    resize: vertical;
+}
+
 #login-bc {
     position: absolute;
     height: 100%;
@@ -94,9 +98,10 @@ body {
     color: #337ab7;
 }
 
-#water {
-    height: 32px;
-    width: 32px;
+#battleship-canvas {
+    height: 320px;
+    width: 320px;
+    border: 1px solid #cccccc;
 }
 
 .no-top-padding {
