@@ -1,12 +1,12 @@
 const _PORT = process.env.PORT || 3000;
 
-var express = require('express'),
+var express = require('express'), // express
     app = require('express')(),
     server = require('http').createServer(app),
-    helper = require('./server/helper'),
-    game = require('./server/core'),
-    JsonDB = require('node-json-db'),
-    db = new JsonDB("./db/user-db", true, true),
+    JsonDB = require('node-json-db'), // npm node-json-db
+    db = new JsonDB("./db/user-db", true, true), // npm chargement de la db
+    helper = require('./server/helper'), // loading the helper.js
+    game = require('./server/core'), // loading the core.js
     io = require('socket.io')(server);
 
 var numberOfClient = 0,
@@ -15,11 +15,13 @@ var numberOfClient = 0,
 
 server.listen(_PORT, function() {
     helper.log('Server up on :' + _PORT);
+    db.delete('/');
 });
 
 app.use('/css', express.static(__dirname + '/web/css/'));
 app.use('/js', express.static(__dirname + '/web/js/'));
 app.use('/img', express.static(__dirname + '/web/img/'));
+app.use('/img/battleship', express.static(__dirname + '/web/img/battleship/'));
 
 app.get('/', (req, res) => {
     res.sendFile('web/index.html', {
@@ -52,7 +54,7 @@ function checkDb(socketId) {
 function removeUserInDb(socketId) { // supression d'un utilisateur dans la db
     if (checkDb(socketId) == 'stop-DirDontExist')
         return;
-        
+
     db.delete('/' + socketId);
 }
 
@@ -105,7 +107,7 @@ io.on('connection', function(socket) {
 
     socket.on('disconnect', function() {
         io.emit('chat-global-print', helper.chatDisconectHtml(infoUserInDb(socket.id, 'userName'), infoUserInDb(socket.id, 'userId'))); // envois déco dans le chat
-        helper.log(infoUserInDb(socket.id, 'userName') + ' #' + infoUserInDb(socket.id, 'userId') + ' disconnected')
+        helper.log(infoUserInDb(socket.id, 'userName') + ' #' + infoUserInDb(socket.id, 'userId') + ' disconnected');
         removeUserInDb(socket.id); // supr l'user de la db
         numberOfClient--; // réduit de 1 le nombre de clients connectés
     });

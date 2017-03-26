@@ -94,6 +94,12 @@ body {
     color: #337ab7;
 }
 
+#water {
+    height: 32px;
+    width: 32px;
+    background-image: url(img/battleship/water.png);
+}
+
 .no-top-padding {
     padding-top: 0px;
 }

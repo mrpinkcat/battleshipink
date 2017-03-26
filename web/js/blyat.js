@@ -28,5 +28,5 @@ bs.init = function() {
 };
 
 $(document).ready(function() {
-    bs.init();
+    // bs.init(); j'ai stop l'init je vais try avec un tableau
 });

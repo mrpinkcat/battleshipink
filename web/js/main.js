@@ -2,6 +2,8 @@
 
 var socket = io();
 
+// log
+
 var userName,
     userId,
     gameId;
@@ -54,6 +56,15 @@ socket.on('username-error', function() {
     $('#username-input').css('color', 'red');
     $('#username-input').css('border-bottom', '2px solid red');
 })
+
+// game
+
+$('#create-btn').click(function() {
+    $('#menu').fadeOut(500, function() {
+        $('#game').fadeIn(500)
+        
+    });
+});
 
 // error screen
 
