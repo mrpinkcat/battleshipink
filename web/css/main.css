@@ -99,9 +99,6 @@ textarea {
 }
 
 #battleship-canvas {
-    height: 320px;
-    width: 320px;
-    border: 1px solid #cccccc;
 }
 
 .no-top-padding {

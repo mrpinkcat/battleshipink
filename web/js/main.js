@@ -62,7 +62,7 @@ socket.on('username-error', function() {
 $('#create-btn').click(function() {
     $('#menu').fadeOut(500, function() {
         $('#game').fadeIn(500)
-        // bs.init();
+        cDraw.init();
     });
 });
 
